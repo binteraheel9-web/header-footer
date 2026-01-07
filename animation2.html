@@ -2,56 +2,123 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Change Background Color On Div Click</title>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-
-    <script>
-        $(document).ready(function () {
-            $(".color-box").click(function () {
-                var color = $(this).data("color");
-                $("body").css("background-color", color);
-            });
-        });
-    </script>
-
+    <title>Delish Food</title>
     <style>
         body {
-            background-color: rgb(51, 51, 51);
-            transition: background-color 1.2s ease; 
             margin: 0;
-            padding: 0;
-            font-family: Verdana, Geneva, sans-serif;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #fdf6f0;
+            color: #444;
+        }
+
+        header {
+            background-color: #ffb703;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            color: #fff;
+            font-size: 36px;
+        }
+
+        header p {
+            color: #fff;
+            font-size: 16px;
         }
 
         .container {
+            padding: 40px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .section-title {
             text-align: center;
-            margin-top: 50px;
+            font-size: 28px;
+            margin-bottom: 30px;
         }
 
-        .color-box {
+        .food-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 12px;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            margin: 15px 0 10px;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        footer {
+            background-color: #ffb703;
+            text-align: center;
+            padding: 15px;
             color: #fff;
-            font-size: 26px;
-            padding: 15px 0;
-            cursor: pointer;
-            user-select: none;
-        }
-
-        .color-box:hover {
-            opacity: 0.8;
+            margin-top: 40px;
         }
     </style>
 </head>
-
 <body>
 
+    <header>
+        <h1>Delish Food</h1>
+        <p>Fresh • Tasty • Made with Love</p>
+    </header>
+
     <div class="container">
-        <div class="color-box" data-color="rgb(255,20,20)">Red</div>
-        <div class="color-box" data-color="rgb(0,153,51)">Green</div>
-        <div class="color-box" data-color="rgb(0,0,245)">Blue</div>
-        <div class="color-box" data-color="rgb(153,51,0)">Orange</div>
-        <div class="color-box" data-color="rgb(102,51,204)">Purple</div>
+        <h2 class="section-title">Our Popular Dishes</h2>
+
+        <div class="food-cards">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" alt="Pizza">
+                <h3>Cheese Pizza</h3>
+                <p>Loaded with cheese and baked to perfection.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1550547660-d9450f859349" alt="Burger">
+                <h3>Classic Burger</h3>
+                <p>Juicy patty with fresh veggies and soft buns.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1525755662778-989d0524087e" alt="Pasta">
+                <h3>Creamy Pasta</h3>
+                <p>Rich, creamy, and full of flavor.</p>
+            </div>
+        </div>
     </div>
+
+    <footer>
+        © 2026 Delish Food | All Rights Reserved
+    </footer>
 
 </body>
 </html>
+
