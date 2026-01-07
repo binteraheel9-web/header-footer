@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Change Background Color On Div Click</title>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $(".color-box").click(function () {
+                var color = $(this).data("color");
+                $("body").css("background-color", color);
+            });
+        });
+    </script>
+
+    <style>
+        body {
+            background-color: rgb(51, 51, 51);
+            transition: background-color 1.2s ease; 
+            margin: 0;
+            padding: 0;
+            font-family: Verdana, Geneva, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .color-box {
+            color: #fff;
+            font-size: 26px;
+            padding: 15px 0;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .color-box:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="color-box" data-color="rgb(255,20,20)">Red</div>
+        <div class="color-box" data-color="rgb(0,153,51)">Green</div>
+        <div class="color-box" data-color="rgb(0,0,245)">Blue</div>
+        <div class="color-box" data-color="rgb(153,51,0)">Orange</div>
+        <div class="color-box" data-color="rgb(102,51,204)">Purple</div>
+    </div>
+
+</body>
+</html>
